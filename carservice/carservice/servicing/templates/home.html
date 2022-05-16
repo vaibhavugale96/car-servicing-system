@@ -1,0 +1,25 @@
+<div>
+    {%for car in cars%}
+    <div class="carname">
+        <a href={% url 'car_detail' car.id %}>
+        <h3>{{car.car_model|capfirst}}<h3>
+        </a>
+        <p>Number: {{car.car_number}}</p>
+
+        {% if car.year_old %}
+        <p>Year: {{car.year_old}}</p>
+        {% endif %}
+
+        {% if car.car_owner%}
+        <p>Owner:{{car.car_owner}}</p>
+        {% endif %}
+        {% if car.description %}
+        <p>Description: {{car.description}}</p>
+        {% endif %}
+        {% if car.sumbission_date %}
+        <p>Submitted on: {{car.sumbission_date}}</p>
+        {% endif %}
+    </div>
+    <hr>
+    {% endfor %}
+</div>
